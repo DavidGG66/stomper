@@ -1,0 +1,82 @@
+Different settings create different games. Here's a list of settings:
+
+Binary settings:
+
+Eat:  + = When player lands on a node, one pip is removed before the rest scatter
+      - = All existing pips scatter
+
+Bounce:  + = Pips won't be scattered off the edge of the grid
+         - = Pips scattered off the edge of the grid are removed completely
+
+Needy:  + = Player may not move onto an empty node
+        - = Player may move onto an empty node
+
+Shifty:  + = Every move, one connection is removed, and a new one is added
+         - = Connections remain fixed
+
+Sacrifice:  + = Player can move to an adjacent node, empty or not, with or
+                    without a connection, at the cost of losing a connection
+            - = A connection is required to move between connected nodes, and
+	            must comply with "Move to Empty"
+	    
+
+Scalar settings:
+
+Size:  The width/height of the grid in nodes, [5 - 9]
+
+Average Pips:  The number of pips in each node, on average
+
+Connected Chance:  The probability that any given pair of adjacent nodes is connected
+
+
+Numbers to track:
+
+Initial pips:  The total number of pips to begin with
+
+Remaining pips:  The number of pips still on the grid
+
+Accessible pips:  The number of pips in nodes connected to the player
+
+Eaten pips:  The number of pips eaten
+
+Lost pips:  The number of pips that have been scattered off the board (when Edge Bounce
+            is off) plus those that have been scattered on to full nodes (when Node
+	    Bounce is off)
+
+Initial connections:  The total number of connections to begin with
+
+Remaning connections:  The number of connections still on the grid
+	    
+Moves:  The total number of moves made
+
+
+Games:
+
+Cockroaches:
+  Eat:       -
+  Bounce:    -
+  Needy:     -
+  Shifty:    (-, +)
+  Sacrifice: (-, +)
+
+  Try to reduce accessible pips to 0 in the fewest moves
+
+
+Mountain hamster:
+  Eat:       +
+  Bounce:    -
+  Needy:     +
+  Shifty:    (+, -)
+  Sacrifice: (+, -)
+
+  Eat as many pips as possible before you're stuck
+
+
+Valley hamster:
+  Eat:       +
+  Bounce:    +
+  Needy:     +
+  Shifty:    (+, -)
+  Sacrifice: (+, -)
+
+  Eat as many pips as possible before you're stuck
